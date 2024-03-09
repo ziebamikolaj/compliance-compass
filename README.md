@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 # Clone the repository
 
-git clone https://github.com/yourusername/compliance-compass.git
+git clone https://github.com/ziebamikolaj/compliance-compass.git
 
 # Navigate to the directory
 
