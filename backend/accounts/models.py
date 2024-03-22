@@ -1,9 +1,8 @@
+from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 
-# Create your models here.
-class Account(models.Model):
-    email = models.EmailField()
-    password = models.CharField(max_length=100)
+class Account(AbstractBaseUser):
+    email = models.EmailField(unique=True)
     phone = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -12,7 +11,9 @@ class Account(models.Model):
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.username
+        return self.email

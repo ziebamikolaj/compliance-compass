@@ -8,8 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Docker
-- Docker Compose
+- Python 3.12
 
 ### Installation
 
@@ -21,49 +20,33 @@ git clone https://github.com/ziebamikolaj/compliance-compass.git
 
 cd compliance-compass
 
-# Use Docker Compose to start the services
+# Start API
 
-docker-compose build
+cd backend
+.venv\Scripts\activate
+python manage.py runserver
 
-docker-compose up -d
+# Start Frontend
 
-This command will start all the services defined in your `docker-compose.yml` file. Once the services are up and running, you can access the API at `http://localhost:8000` (or whatever port you have configured).
+cd frontend
+npm install
+npm start
 
-### Usage
+# Open browser and go to localhost:3000
 
-To use the API, you can send HTTP requests to the endpoints defined in the API. Here are some examples:
+## Running the tests
 
-#### Create a new compliance document
+To run the tests, navigate to the backend directory and run:
 
-POST /documents
+```
+python manage.py test
+```
 
-Request body:
+## Built With
 
-{
-"title": "Document Title",
-"content": "Document content",
-"category": "Category Name"
-}
+- Django - The web framework used
+- React - The frontend library used
 
-#### Get a compliance document
+## Author
 
-GET /documents/{id}
-
-#### Update a compliance document
-
-PUT /documents/{id}
-
-Request body:
-
-{
-"title": "New Document Title",
-"content": "New Document content",
-"category": "New Category Name"
-}
-
-#### Delete a compliance document
-
-DELETE /documents/{id}
-
-Please refer to the API documentation for more detailed information about the request and response formats.
-Once the API is running, you can use it to manage your compliance documents. Here are some example
+- **Mikolaj Zieba** - [ziebamikolaj](https://github.com/ziebamikolaj)

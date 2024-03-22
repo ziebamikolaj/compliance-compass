@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountConfig', 
-    'organizations.apps.OrganizationsConfig',    
+    'organizations.apps.OrganizationConfig',   
+    'documents.apps.DocumentConfig', 
     'drf_spectacular',
     'corsheaders',
     
