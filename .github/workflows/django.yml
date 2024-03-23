@@ -30,9 +30,11 @@ jobs:
           pip install flake8 black  # Popular free choices
           flake8 . 
           black . 
-      - name: Check for Conventional Commits
-        uses: commitizen-tools/github-actions@v1
-
+      - name: PR Conventional Commit Validation
+        uses:  ytanikin/PRConventionalCommits@1.1.0
+        with:
+          task_types: '["feat","fix","docs","test","ci","refactor","perf","chore","revert"]'
+          add_label: 'false'
 
   badge:
     runs-on: ubuntu-latest
