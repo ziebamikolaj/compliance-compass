@@ -31,7 +31,8 @@ jobs:
           flake8 . 
           black . 
       - name: Check for Conventional Commits
-        uses: commitizen/github-action@v3 
+        uses: commitizen-tools/github-actions@v1
+
 
   badge:
     runs-on: ubuntu-latest
