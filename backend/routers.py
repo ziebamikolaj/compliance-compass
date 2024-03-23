@@ -8,8 +8,8 @@ from organizations.viewsets import OrganizationViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'account', AccountViewSet, basename="accounts")
-router.register(r'organization' , OrganizationViewSet, basename="organizations")
-router.register(r'document', DocumentViewSet, basename="documents")
+router.register(r"account", AccountViewSet, basename="accounts")
+router.register(r"organization", OrganizationViewSet, basename="organizations")
+router.register(r"document", DocumentViewSet, basename="documents")
 
 urlpatterns = router.urls

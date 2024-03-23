@@ -14,19 +14,32 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import include, path
-from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
 from accounts.views import LoginAPI, RegisterAPI
 
 from routers import router
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include((router.urls, 'core_api'), namespace='core_api')),    
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),  # Schema endpoint
-    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),  # Swagger UI
-    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),  # Redoc UI
-    path('register/', RegisterAPI.as_view(), name='register'),
-    path('login/', LoginAPI.as_view(), name='login'),
+    path("admin/", admin.site.urls),
+    path("api/", include((router.urls, "core_api"), namespace="core_api")),
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),  # Schema endpoint
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),  # Swagger UI
+    path(
+        "api/schema/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),  # Redoc UI
+    path("register/", RegisterAPI.as_view(), name="register"),
+    path("login/", LoginAPI.as_view(), name="login"),
 ]

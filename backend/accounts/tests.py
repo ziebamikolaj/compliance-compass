@@ -1,15 +1,11 @@
-
 from django.test import TestCase
 from .models import Account
+
 
 class AccountModelTests(TestCase):
     def test_email_field_is_valid(self):
         account = Account.objects.create(email="test@example.com", password="testpass")
         self.assertEqual(account.email, "test@example.com")
-    
-    # def test_password_field_max_length(self):
-    #     with self.assertRaises(Exception):
-    #         Account.objects.create(email="test@example.com", password="a" * 101)
 
     def test_is_active_default(self):
         account = Account.objects.create(email="test@example.com", password="testpass")
@@ -32,6 +28,6 @@ class AccountModelTests(TestCase):
 
     def test_account_password_change(self):
         account = Account.objects.create(email="test@example.com", password="testpass")
-        account.set_password("newpass") 
+        account.set_password("newpass")
         account.save()
-        self.assertTrue(account.check_password("newpass")) 
+        self.assertTrue(account.check_password("newpass"))
