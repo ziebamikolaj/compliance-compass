@@ -14,38 +14,38 @@ These instructions will get you a copy of the project up and running on your loc
 
 # Clone the repository
 
-git clone https://github.com/ziebamikolaj/compliance-compass.git\
+git clone https://github.com/ziebamikolaj/compliance-compass.git
 
 # Navigate to the directory
 
-cd compliance-compass\
+cd compliance-compass
 
 # Start API
 
 cd backend\
 .venv\Scripts\activate\
-python manage.py runserver\
+python manage.py runserver
 
 # Start Frontend
 
 cd frontend\
 npm install\
-npm start\
+npm start
 
 # Open browser and go to localhost:3000
 
 ## Running the tests
 
-To run the tests, navigate to the backend directory and run:\
+To run the tests, navigate to the backend directory and run:
 
 ```
-python manage.py test\
+python manage.py test
 ```
 
 ## Built With
 
-- Django - The web framework used\
-- React - The frontend library used\
+- Django - The web framework used
+- React - The frontend library used
 
 ## Author
 
